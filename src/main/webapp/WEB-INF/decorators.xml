@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/layout/">
+	<!-- 配置不进行页面装饰的 URL -->
+	<excludes>
+		<pattern>/resources/*</pattern>
+	</excludes>
+	
+	<!-- 默认页面布局 -->
+	<decorator name="default" page="layout.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+</decorators>

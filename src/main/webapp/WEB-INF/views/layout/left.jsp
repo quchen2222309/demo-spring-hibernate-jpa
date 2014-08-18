@@ -1,9 +1,18 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
-
-	<ul class="nav nav-pills nav-stacked">
-		<li <c:if test="${location=='我的用户' }">class="active"</c:if>><a href="${ctx }/dbUser/userInfo">我的数据库空间</a></li>
-		<li <c:if test="${location=='创建申请' }">class="active"</c:if>><a href="${ctx }/application/create">新的空间申请</a></li>
-		<li <c:if test="${location=='申请列表' }">class="active"</c:if>><a href="${ctx }/application/list">空间申请状态</a></li>
-	</ul>
+<ul class="nav nav-sidebar">
+    <li class="active"><a href="#">Overview</a></li>
+    <li><a href="#">Reports</a></li>
+    <li><a href="#">Analytics</a></li>
+    <li><a href="#">Export</a></li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li><a href="">Nav item</a></li>
+    <li><a href="">Nav item again</a></li>
+    <li><a href="">One more nav</a></li>
+    <li><a href="">Another nav item</a></li>
+    <li><a href="">More navigation</a></li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li><a href="">Nav item again</a></li>
+    <li><a href="">One more nav</a></li>
+    <li><a href="">Another nav item</a></li>
+</ul>

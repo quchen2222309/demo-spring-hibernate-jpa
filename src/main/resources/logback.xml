@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<!-- 控制台 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%t] %-5p [%c] - %m%n</pattern>
+		</encoder>
+	</appender>
+	<!-- 日志文件 -->
+	<appender name="ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>%d [%t] %-5p [%c] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>project-error-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 记录最近30天日志 -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>	
+	
+	<!-- 默认 -->
+	<root level="info">
+		<appender-ref ref="STDOUT" />		
+	</root>
+	
+	<!--错误日志-->
+    <logger name="project-error" level="debug">
+        <appender-ref ref="ERROR"/>
+    </logger>
+    
+	<logger name="org.springframework" level="debug" />
+	<logger name="org.apache.shiro" level="info" />
+	<logger name="net.sf.ehcache" level="ERROR" />
+    <logger name="cn.cnic.dp" level="DEBUG" />
+
+</configuration>

@@ -1,18 +1,18 @@
 package com.cnic.dp.test;
 
-import javax.annotation.Resource;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.junit.runner.RunWith;
-import org.junit.Test;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.transaction.annotation.Transactional;
-
 import cn.cnic.dp.bean.Customer;
 import cn.cnic.dp.service.CustomerService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 
 @RunWith(value=SpringJUnit4ClassRunner.class) 
-@ContextConfiguration({"file:src/main/webapp/WEB-INF/applicationContext.xml"}) 
+@ContextConfiguration(locations = {"classpath:spring-context.xml"})
 @Transactional 
 public class JPADemo {
 	

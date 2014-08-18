@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.newjac.dp</groupId>
-	<artifactId>dp-application</artifactId>
+	<artifactId>spring-hibernate-jpa-blank</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dp-application Maven Webapp</name>
+	<name>spring-hibernate-jpa-blank Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
@@ -64,11 +64,6 @@
 			<version>3.2.0.Final</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.jboss.logging</groupId>
-			<artifactId>jboss-logging</artifactId>
-			<version>3.1.0.GA</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -228,12 +223,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.3</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
 			<version>1.9.13</version>
@@ -251,11 +240,11 @@
 			<version>1.3</version>
 		</dependency>
 
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+        </dependency>
 
 		<!-- Servlet -->
 		<dependency>
@@ -291,6 +280,6 @@
 	</dependencies>
 	
 	<build>
-		<finalName>dp-application</finalName>
+		<finalName>spring-hibernate-jpa-blank</finalName>
 	</build>
 </project>

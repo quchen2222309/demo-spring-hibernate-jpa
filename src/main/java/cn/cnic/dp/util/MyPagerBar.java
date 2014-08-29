@@ -9,9 +9,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 public class MyPagerBar extends TagSupport {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private PageUtil<?> page;
 	
@@ -40,8 +37,8 @@ public class MyPagerBar extends TagSupport {
 			
 			int count = 0;
 			
-			int pre = page.getPageNo();
-			int nex = page.getPageNo();
+			int pre;
+			int nex;
 			
 			for(int y=1; y<=displayPage; y++) {
 				pre = page.getPageNo() - y;

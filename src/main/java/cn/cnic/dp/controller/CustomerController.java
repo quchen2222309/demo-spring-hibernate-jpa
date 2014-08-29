@@ -1,16 +1,17 @@
 package cn.cnic.dp.controller;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import cn.cnic.dp.bean.Customer;
+import cn.cnic.dp.service.CustomerService;
+import cn.cnic.dp.util.PageUtil;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import cn.cnic.dp.bean.Customer;
-import cn.cnic.dp.service.CustomerService;
-import cn.cnic.dp.util.PageUtil;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Scope("prototype")
@@ -38,8 +39,8 @@ public class CustomerController extends BaseControllor {
 	@RequestMapping("/merge")
 	public @ResponseBody Customer mergeCustomer() {
 		Customer c = new Customer();
-		c.setId(1);
-		c.setName("tomc");
+		c.setId(6);
+		c.setName("pangbo");
 		customerService.merge(c);
 		return c;
 	}
@@ -63,7 +64,9 @@ public class CustomerController extends BaseControllor {
 	 */
 	@RequestMapping("/remove")
 	public void removeCustomer() {
-		customerService.remove(1);
+        Customer c = new Customer();
+        c.setId(2);
+		customerService.remove(c);
 	}
 	
 	@RequestMapping("/list")

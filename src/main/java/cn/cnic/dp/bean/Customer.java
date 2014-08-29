@@ -16,6 +16,7 @@ public class Customer {
 	@Id
 	// 指定主键生成策略
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "customer_id")
 	private Integer id;
 	@Column(length = 20, name = "customer_name")
 	private String name;

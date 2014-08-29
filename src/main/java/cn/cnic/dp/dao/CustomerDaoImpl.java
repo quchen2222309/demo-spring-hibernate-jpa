@@ -12,7 +12,12 @@ import org.springframework.stereotype.Repository;
 
 import cn.cnic.dp.bean.Customer;
 import cn.cnic.dp.util.PageUtil;
+import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 当显式调用entityManager.flush()时，内存中对象更新到数据库中
+ * 当事务结束时，内存中对象更新到数据库中
+ */
 @Repository(value = "customerDao")
 public class CustomerDaoImpl implements CustomerDao {
 	
@@ -22,26 +27,35 @@ public class CustomerDaoImpl implements CustomerDao {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-	
+
+    /**
+     * save
+     * @param customer
+     */
 	public void save(Customer customer) {
 		entityManager.persist(customer);
 	}
-	
+
+    /**
+     * merge
+     * @param customer
+     */
 	public void merge(Customer customer) {
 		entityManager.merge(customer);
 	}
-	
+
+    /**
+     * refresh
+     * @param customer
+     */
 	public void refresh(Customer customer) {
-		Customer c = entityManager.find(Customer.class, 1);
-		c.setName("fuck");
-		entityManager.refresh(c);
-		System.out.println(c);
+		entityManager.refresh(customer);
 	}
 	
-	public void remove(Integer id) {
-		Customer c = entityManager.find(Customer.class, id);
-		entityManager.remove(c);
+	public void remove(Customer customer) {
+		entityManager.remove(customer);
 	}
+
 	/**
 	 * JPQL
 	 * @return
@@ -54,6 +68,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		return customers;
 		
 	}
+
 	/**
 	 * CriteriaBuilder
 	 * @return
